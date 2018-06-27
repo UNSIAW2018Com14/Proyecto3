@@ -17,11 +17,9 @@
         @php
           $agregar = $routes[0];
           $modificar = $routes[1];
-          $eliminar = $routes[2];
         @endphp
         <li class="nav-item"><a href="{{$agregar}}"class="nav-link">Agregar</a></li>
-        <li class="nav-item"><a href="{{$modificar}}"class="nav-link">Modificar</span></a></li>
-        <li class="nav-item"><a href="{{$eliminar}}" class="nav-link">Eliminar</a></li>    
+        <li class="nav-item"><a href="{{$modificar}}"class="nav-link">Modificar/Eliminar</span></a></li> 
       @endif
     </ul>
     @endif

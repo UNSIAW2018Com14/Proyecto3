@@ -1,5 +1,7 @@
 @extends ('layout')
 @section ('content')
+<link href="/css/eliminar.css" rel="stylesheet">
+<link href="/css/estiloFormulario.css" rel="stylesheet">
 <h5 class="section-title h1">Modificar {{$name}}</h5>
 @include('errors')
 @if(Request::path() == 'modificar/integrantes')

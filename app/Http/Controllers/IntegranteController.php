@@ -15,7 +15,7 @@ class IntegranteController extends Controller
 
     public function create($view) {
 
-        $routes = array('/agregar/integrantes', '/modificar/integrantes', '/eliminar/integrantes');
+        $routes = array('/agregar/integrantes', '/modificar/integrantes');
         $name = "Integrantes";
 
             $integrantes = Integrante::all();
@@ -76,7 +76,7 @@ class IntegranteController extends Controller
             }
           
             $integrante->delete();
-            return redirect("/eliminar/integrantes");
+            return redirect("/modificar/integrantes");
 
     }
 

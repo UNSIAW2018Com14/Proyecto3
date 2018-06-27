@@ -17,7 +17,7 @@ class EnfrentamientoController extends Controller
 
     public function create($view) {
 
-        $routes = array('/agregar/enfrentamientos', '/modificar/enfrentamientos', '/eliminar/enfrentamientos');
+        $routes = array('/agregar/enfrentamientos', '/modificar/enfrentamientos');
         $name = "enfrentamientos";
 
         $enfrentamientos = Enfrentamiento::all();
@@ -59,7 +59,19 @@ class EnfrentamientoController extends Controller
         }
         
         $enfrentamiento->delete();
-        return redirect("/eliminar/enfrentamientos");
+        return redirect("/modificar/enfrentamientos");
+    }
+
+    public function update() {
+
+        $enfrentamiento = Enfrentamiento::where('idEnfrentamiento', request('idEnfrentamiento'))->first(); 
+        $bo5s = $_POST['bo5sDisponibles'];
+
+        $enfrentamiento -> equipo1 = request('equipo1');
+        $enfrentamiento -> equipo2 = request('equipo2');
+        $enfrentamiento -> bo5 = $bo5s;
+        $enfrentamiento -> save();
+        return back();
     }
 
 }

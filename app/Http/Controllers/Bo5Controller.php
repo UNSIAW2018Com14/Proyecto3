@@ -12,7 +12,7 @@ class Bo5Controller extends Controller
 {
     public function create($view) {
 
-        $routes = array('/agregar/bo5s', '/modificar/bo5s', '/eliminar/bo5s');
+        $routes = array('/agregar/bo5s', '/modificar/bo5s');
         $name = "Bo5s";
 
             $bo5s = Bo5::all();
@@ -42,7 +42,17 @@ class Bo5Controller extends Controller
             $bo5 = Bo5::find($idbo5);
             
             $bo5->delete();
-            return redirect("/eliminar/bo5s");
+            return redirect("/modificar/bo5s");
+    }
+
+    public function update() {
+
+        $bo5 = Bo5::where('idBo5', request('idBo5'))->first(); 
+
+        $bo5 -> nickIntegrante1 = request('nickIntegrante1');
+        $bo5 -> nickIntegrante2 = request('nickIntegrante2');
+        $bo5 -> save();
+        return back();
     }
 
 }

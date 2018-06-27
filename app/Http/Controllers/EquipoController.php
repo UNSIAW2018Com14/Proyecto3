@@ -15,7 +15,7 @@ class EquipoController extends Controller
 
     public function create($view) {
 
-        $routes = array('/agregar/equipos', '/modificar/equipos', '/eliminar/equipos');
+        $routes = array('/agregar/equipos', '/modificar/equipos');
         $name = "equipos";
 
         $integrantes = Integrante::all();
@@ -61,7 +61,7 @@ class EquipoController extends Controller
         }
         
         $equipo->delete();
-        return redirect("/eliminar/equipos");
+        return redirect("/modificar/equipos");
     }
 
     public function update() {

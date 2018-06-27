@@ -13,7 +13,7 @@ class InstanciaController extends Controller
 
     public function create($view) {
 
-        $routes = array('/agregar/instancias', '/modificar/instancias', '/eliminar/instancias');
+        $routes = array('/agregar/instancias', '/modificar/instancias');
         $name = "instancias";
 
             $instancias = Instancia::all();
@@ -50,7 +50,25 @@ class InstanciaController extends Controller
             $instancia = Instancia::find($idInstancia);      
             $instancia->delete();
 
-            return redirect("/eliminar/instancias");
+            return redirect("/modificar/instancias");
 
+    }
+
+    public function update() {
+
+        $instancia = Instancia::where('nombre', request('nombreViejo'))->first(); 
+        $check = Instancia::where('nombre', request('nombre'))->first();
+        $enfrentamientos = $_POST['enfrentamientosDisponibles'];
+
+        if($check != null && $check != $instancia) {
+            return redirect("/modificar/instancias")->withErrors([
+                'message' => 'No se permite repetir el mismo nombre para dos instancias'
+            ]);; 
+        } 
+        
+        $instancia -> nombre = request('nombre');
+        $instancia -> enfrentamientos = $enfrentamientos;
+        $instancia -> save();
+        return back();
     }
 }
