@@ -1,3 +1,5 @@
+<link href="{{ asset('css/estiloFormulario.css') }}" rel="stylesheet">
+<link href="{{ asset('css/eliminar.css') }}" rel="stylesheet">
 <div class="container-fluid">       
     <div class="row top-buffer">
         @foreach ($equipos->all() as $equipo) 
@@ -39,10 +41,10 @@
                                 </select>
                             </div>         
                         </form>
-                        <button type="submit" form="formModificar{{$equipo->nombre}}" class="btn btn-success btn-md">Modificar</button>
+                        <button type="submit" form="formModificar{{$equipo->nombre}}" class="btn btn-success btn-md, boton"><div class="texto-boton">Modificar</div></button>
                         <div class="text-center">
                             <!-- Button HTML (to Trigger Modal) -->
-                            <a href="#myModal{{$equipo->nombre}}" class="trigger-btn" data-toggle="modal">Eliminar equipo {{$equipo->nombre}}</a>
+                            <a href="#myModal{{$integrante->nickname}}" class="trigger-btn" data-toggle="modal"><div class="boton, item">Eliminar equipo {{$equipo->nombre}}</div></a>
                         </div>
 
                     <!-- Modal HTML -->

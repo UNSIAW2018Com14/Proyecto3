@@ -56,10 +56,10 @@
                                 </select>
                             </div>           
                         </form>
-                        <button type="submit" form="formModificar{{$enfrentamiento->idEnfrentamiento}}" class="btn btn-success btn-md">Modificar</button>
+                        <button type="submit" form="formModificar{{$enfrentamiento->idEnfrentamiento}}" class="btn btn-success btn-md, boton"><div class= texto-boton>Modificar</button>
                         <div class="text-center">
                         <!-- Button HTML (to Trigger Modal) -->
-                        <a href="#myModal{{$enfrentamiento->idEnfrentamiento}}" class="trigger-btn" data-toggle="modal">Eliminar enfrentamiento {{$enfrentamiento->equipo1}} vs {{$enfrentamiento->equipo2}}</a>
+                        <a href="#myModal{{$enfrentamiento->idEnfrentamiento}}" class="trigger-btn" data-toggle="modal"><div class="boton, item">Eliminar enfrentamiento {{$enfrentamiento->equipo1}} vs {{$enfrentamiento->equipo2}}</div></a>
                         </div>
                         <!-- Modal HTML -->
                         <div id="myModal{{$enfrentamiento->idEnfrentamiento}}" class="modal fade">

@@ -1,3 +1,4 @@
+<link href="{{ asset('css/estiloFormulario.css') }}" rel="stylesheet">
 <div class="container-fluid">       
     <div class="row top-buffer">
         @foreach ($instancias->all() as $instancia) 
@@ -32,10 +33,10 @@
                                 </select>
                             </div>         
                         </form>
-                        <button type="submit" form="formModificar{{$instancia->nombre}}" class="btn btn-success btn-md">Modificar</button>
+                        <button type="submit" form="formModificar{{$instancia->nombre}}" class="btn btn-success btn-md, boton"><div class="texto-boton">Modificar</div></button>
                         <div class="text-center">
 		<!-- Button HTML (to Trigger Modal) -->
-		<a href="#myModal{{$instancia->idInstancia}}" class="trigger-btn" data-toggle="modal">Eliminar instancia {{$instancia->nombre}}</a>
+		<a href="#myModal{{$instancia->idInstancia}}" class="trigger-btn" data-toggle="modal"><div class="boton, item">Eliminar instancia {{$instancia->nombre}}</div></a>
         </div>
         <!-- Modal HTML -->
         <div id="myModal{{$instancia->idInstancia}}" class="modal fade">

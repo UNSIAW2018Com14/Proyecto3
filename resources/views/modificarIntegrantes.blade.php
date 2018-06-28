@@ -66,7 +66,7 @@
                         <button type="submit" form="formModificar{{$integrante->nickname}}" class="btn btn-success btn-md, boton"><div class="texto-boton">Modificar</div></button>
                         <div class="text-center">
                         <!-- Button HTML (to Trigger Modal) -->
-                        <a href="#myModal{{$integrante->nickname}}" class="trigger-btn" data-toggle="modal"><div class="item">Eliminar Integrante {{$integrante->nickname}}</div></a>
+                        <a href="#myModal{{$integrante->nickname}}" class="trigger-btn" data-toggle="modal"><div class="boton, item">Eliminar Integrante {{$integrante->nickname}}</div></a>
                     </div>                   
                 <!-- Modal HTML -->
                         <div id="myModal{{$integrante->nickname}}" class="modal fade">

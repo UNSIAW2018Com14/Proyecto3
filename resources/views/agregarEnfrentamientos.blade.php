@@ -9,7 +9,7 @@
                 <small class="form-text text-muted">Se requiere completar este campo.</small>
             </div>
             <div class="form-group">
-                <label for="equipo1"></label>
+                <label for="equipo1">Equipo 1</label>
                     <select name="equipo1" class="form-control" required>
                     <option value="" disabled selected hidden> Choose...</option>
                     @foreach ($equipos->all() as $equipo)
@@ -19,7 +19,7 @@
                 <small class="form-text text-muted">Se requiere completar este campo.
             </div>
             <div class="form-group">
-                <label for="equipo2"></label>
+                <label for="equipo2">Equipo 2</label>
                 <select name="equipo2" class="form-control" required>
                     <option value="" disabled selected hidden> Choose...</option>
                     @foreach ($equipos->all() as $equipo)
@@ -29,7 +29,7 @@
                 <small class="form-text text-muted">Se requiere completar este campo.
             </div>
             <div class="form-group">
-                <label for="editor">Editor</label>
+                <label for="editor"></label>
                 <input type="text" class="form-control" id="editor" name= "editor" placeholder="Editor" required>
             </div>
             <div class="form-group">
@@ -43,7 +43,7 @@
                 </select>
                 <small class="form-text text-muted">Se requiere completar este campo.</small>
             </div>
-            <button type="submit" class="btn btn-primary, boton"><div class="texto-boton"> Crear Enfrentamiento</div></button>
+            <button type="submit" class="btn btn-success btn-md, boton"><div class="texto-boton"> Crear Enfrentamiento</div></button>
         </form>
     </div>
     <div class="col-sm-6">     

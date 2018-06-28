@@ -16,8 +16,16 @@
   align-content: center;
 }
 
+.boton-eliminar:hover{
+  background-color: red;
+}
+
 .texto-boton{
   color:black;
+}
+.texto-boton:hover{
+  text-decoration: underline;
+  text-decoration-color: black;
 }
 
 .etiqueta-tab{
@@ -26,4 +34,8 @@
 
 .card-title{
   padding-top: 15px;
+}
+
+select.form-control:not([size]):not([multiple]) {
+   height: 30px;
 }

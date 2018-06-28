@@ -1,10 +1,12 @@
+<script type="text/javascript" src="/js/enfrentamientos.js" async></script>
 <script type="text/javascript" src="/js/bo5s.js" async></script>
+<link href="{{ asset('css/estiloFormulario.css') }}" rel="stylesheet">
 <div class="container-fluid">
     <div class= "col-sm-6"> 
         <form method ="POST" action ="/agregar/bo5s">
             {{csrf_field()}}
             <div class="form-group">
-                <label for="idBo5"></label>
+                <label for="idBo5">ID</label>
                 <input type="number" class="form-control" id="idBo5" name="idBo5" placeholder="ID" required>
                 <small class="form-text text-muted">Se requiere completar este campo.</small>
             </div>
@@ -33,7 +35,7 @@
                 </select>
                 <small class="form-text text-muted">Se requiere completar este campo.
             </div>
-            <button type="submit" class="btn btn-primary, boton"><div class="texto-boton"> Crear Bo5</div></button>
+            <button type="submit" class="btn btn-success btn-md, boton"><div class="texto-boton"> Crear Bo5</div></button>
         </form>
     </div>
     <div class="col-sm-6">     

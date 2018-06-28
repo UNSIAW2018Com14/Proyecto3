@@ -1,4 +1,6 @@
 <script type="text/javascript" src="/js/bo5s.js" async></script>
+<link href="{{ asset('css/estiloFormulario.css') }}" rel="stylesheet">
+<link href="{{ asset('css/eliminar.css') }}" rel="stylesheet">
 <div class="container-fluid">       
     <div class="row top-buffer">
         @foreach ($bo5s->all() as $bo5) 
@@ -17,7 +19,7 @@
                             <div class="form-row">      
                                 <div class="col">
                                 <label for="nickIntegrante1"></label>
-                                    <select name="nickIntegrante1" class="form-group" required>
+                                    <select name="nickIntegrante1" class="form-control" required>
                                     @foreach ($integrantes->all() as $integrante)
                                         @if ($integrante->nickname == $bo5->nickIntegrante1)
                                         <option selected >{{$integrante-> nickname}}</option>
@@ -32,7 +34,7 @@
                             <div class="form-row">      
                                 <div class="col">
                                 <label for="equipo2"></label>
-                                    <select name="nickIntegrante2" class="form-group" required>
+                                    <select name="nickIntegrante2" class="form-control" required>
                                     @foreach ($integrantes->all() as $integrante)
                                         @if ($integrante->nickname == $bo5->nickIntegrante2)
                                         <option selected >{{$integrante-> nickname}}</option>
@@ -44,10 +46,10 @@
                                 </div>
                             </div>         
                         </form>
-                        <button type="submit" form="formModificar{{$bo5->idBo5}}" class="btn btn-success btn-md">Modificar</button>
+                        <button type="submit" form="formModificar{{$bo5->idBo5}}" class="btn btn-success btn-md, boton"><div class="texto-boton">Modificar</div></button>
                         <div class="text-center">
                         <!-- Button HTML (to Trigger Modal) -->
-                        <a href="#myModal{{$bo5->idBo5}}" class="trigger-btn" data-toggle="modal">Eliminar bo5 {{$bo5->nickIntegrante1}} vs {{$bo5->nickIntegrante2}}</a>
+                        <a href="#myModal{{$bo5->idBo5}}" class="trigger-btn" data-toggle="modal"><div class="boton, item">Eliminar bo5 {{$bo5->nickIntegrante1}} vs {{$bo5->nickIntegrante2}}</div></a>
                     </div>
 
                 <!-- Modal HTML -->
@@ -58,11 +60,11 @@
                                 <div class="icon-box">
                                     <i class="material-icons">&#xE5CD;</i>
                                 </div>				
-                                <h4 class="modal-title">Are you sure?</h4>	
+                                <h4 class="modal-title">Confirmacion:</h4>	
                                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                             </div>
                             <div class="modal-body">
-                                <p>Do you really want to delete enfrentamiento {{$bo5->nickIntegrante1}} vs {{$bo5->nickIntegrante2}}? This process cannot be undone.</p>
+                                <p>Esta seguro que desea eliminar el enfrentamiento {{$bo5->nickIntegrante1}} vs {{$bo5->nickIntegrante2}}?</p>
                             </div>
                             <div class="modal-footer">	
                                 <form id="formEliminar{{$bo5->idBo5}}" method="POST" action="/eliminar/bo5s">
@@ -73,7 +75,7 @@
                                         </div>
                                     </div>
                                     </form>
-                                    <button type="button" class="btn btn-info" data-dismiss="modal">Cancel</button>
+                                    <button type="button" class="btn btn-info" data-dismiss="modal">Cancelar</button>
                                     <button type="submit" form="formEliminar{{$bo5->idBo5}}" class="btn btn-success btn-md">Eliminar</button> 
                             </div>
                         </div>
